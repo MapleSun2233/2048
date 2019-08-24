@@ -41,6 +41,13 @@ function gameOver(){
     init();
     refresh();
 }
+// 游戏胜利
+function gameWin(){
+    document.removeEventListener('keydown',listenKey,false);
+    alert('Game Win!');
+    init();
+    refresh();
+}
 // 刷新分数
 function updateScore(){
     let max =  mainArr[0][0];
@@ -189,6 +196,15 @@ function checkContinue(){
         }
     gameOver();
 }
+// 检查游戏胜利
+function checkWin(){
+    for(let i in mainArr)
+        for(let j in mainArr[i])
+            if(mainArr[i][j] == 2048){
+                gameWin();
+                return;
+            }
+}
 // 空白处随机出现一个item
 function randomShow(){
     // 抽取空白坐标
@@ -224,4 +240,7 @@ function refresh(){
     setTimeout(
         // 检查游戏可继续性 延时计算避免误伤
         checkContinue,1000);
+    setTimeout(
+        // 检查游戏可继续性 延时计算避免误伤
+        checkWin,1000);
 }
