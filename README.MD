@@ -1,4 +1,4 @@
-## Demo address : [Click to view](http://2048.bluemaple.top/)
+
 ## Author:TheBlueMaple
 ## Author URL:github.com/TheBlueMaple
 ## Finish Time:2019-8-22
